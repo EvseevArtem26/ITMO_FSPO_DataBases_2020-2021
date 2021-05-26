@@ -138,7 +138,7 @@
 <pre><code>SELECT * FROM postoffice WHERE address = 'SPb' AND id_postoffice &gt; 1;
 </code></pre>
 <p><img alt="" src="../2.jpg" /></p>
-<h3 id="no3-4">№3 дат в таблице нет, заменил этот запрос на 4 + подзапрос + объединение запросов.</h3>
+<h3 id="no3">№3 дат в таблице нет, заменил этот запрос на подзапрос + объединение запросов.</h3>
 <h4 id="moskva">Выбор хранения и производства(объединение), у которых адрес 'Moskva'.</h4>
 <pre><code>SELECT id_storage, newspaper_id, circulation_id, typography_id, production_id, quantity, address, number FROM 
         storage INNER JOIN postoffice ON address IN (SELECT address from postoffice WHERE address = 'Moskva');
