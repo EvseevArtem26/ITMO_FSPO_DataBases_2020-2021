@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>typography - Newspaper service</title>
+        <title>create - Newspaper service</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,32 +36,32 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../newspaper/" class="dropdown-item">newspaper</a>
+    <a href="../../tables/newspaper/" class="dropdown-item">newspaper</a>
 </li>
                                     
 <li>
-    <a href="../circulation/" class="dropdown-item">circulation</a>
+    <a href="../../tables/circulation/" class="dropdown-item">circulation</a>
 </li>
                                     
 <li>
-    <a href="../production/" class="dropdown-item">production</a>
+    <a href="../../tables/production/" class="dropdown-item">production</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">typography</a>
+    <a href="../../tables/typography/" class="dropdown-item">typography</a>
 </li>
                                     
 <li>
-    <a href="../storage/" class="dropdown-item">storage</a>
+    <a href="../../tables/storage/" class="dropdown-item">storage</a>
 </li>
                                     
 <li>
-    <a href="../postoffice/" class="dropdown-item">post office</a>
+    <a href="../../tables/postoffice/" class="dropdown-item">post office</a>
 </li>
                                 </ul>
                             </li>
@@ -70,27 +70,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../code/create/" class="dropdown-item">create</a>
+    <a href="../create/" class="dropdown-item">create</a>
 </li>
                                     
 <li>
-    <a href="../../code/insert/" class="dropdown-item">insert</a>
+    <a href="../insert/" class="dropdown-item">insert</a>
 </li>
                                 </ul>
                             </li>
                             <li class="navitem">
                                 <a href="../../zaprosi/" class="nav-link">Запросы</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDb <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../code/mongo_create/" class="dropdown-item">create</a>
+    <a href="./" class="dropdown-item active">create</a>
 </li>
                                     
 <li>
-    <a href="../../code/mongo_queries/" class="dropdown-item">queries</a>
+    <a href="../mongo_queries/" class="dropdown-item">queries</a>
 </li>
                                 </ul>
                             </li>
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../production/" class="nav-link">
+                                <a rel="prev" href="../../zaprosi/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../storage/" class="nav-link">
+                                <a rel="next" href="../mongo_queries/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -130,7 +130,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#typography" class="nav-link">Typography(Типография)</a>
+            <li class="nav-item" data-level="2"><a href="#create" class="nav-link">Create</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -139,58 +139,42 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="typography">Typography(Типография)</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="center">Type</th>
-<th align="center">Primary key</th>
-<th align="center">Foreign key</th>
-<th align="center">Unique</th>
-<th align="center">Integrity constraints</th>
-<th align="center">Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">id_typography</td>
-<td align="center">int</td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">name</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">20</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">address</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">40</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">work_status</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">20</td>
-<td align="center">not null</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="create">Create</h2>
+<h4 id="_1">Создание таблицы "Типография":</h4>
+<pre><code>db.typography.insertMany( [ {name: 'S&amp;P Global', address: 'Odinsk', status: 1}, 
+      {name: 'Nielsen', address: 'Moskva', status: 1}, 
+          {name: 'Thomson Reuters', address: 'Saint-Petersburg', status: 1}])
+</code></pre>
+<h4 id="_2">Создание таблицы "Газета":</h4>
+<pre><code>db.newspaper.insertMany([{name: 'Woolsteet', price: 15000, editor: 'Danilin Artem', index: 3746837}, 
+      {name: 'Blumberk', price: 17000, editor: 'Nikitin Andrey', index: 2390829}, 
+          {name: 'Pasfeet', price: 10000, editor: 'Byldakov Nikita', index: 23898237}])
+</code></pre>
+<h4 id="_3">Создание таблицы "Производство":</h4>
+<pre><code>db.printing.insertMany([{typography: 'S&amp;P Global',
+                      circulation: 25,
+                      newspaper_index: 3746837,
+                          quantity: 400}, 
+                          {typography: 'S&amp;P Global',
+                          circulation: 27,
+                          newspaper_index: 23898237,
+                          quantity: 350}, 
+                          {typography: 'Nielsen',
+                          circulation: 154,
+                          newspaper_index: 2390829,
+                          quantity: 25000}])
+</code></pre>
+<h4 id="_4">Создание таблицы "Почтовое отделение":</h4>
+<pre><code>db.postoffice.insertMany([{address: &quot;Severodvinsk&quot;, number: 1345355}, 
+                         {address: &quot;Saint-Petersburg&quot;, number: 7634764}, 
+                         {address: &quot;Moskva&quot;, number: 8347462}])
+</code></pre>
+<h4 id="_5">Создание таблицы "Хранение":</h4>
+<pre><code>db.storage.insertMany([{postoffice_number: 1345355, circulation: 25, newspaper_index: 3746837, quantity: 200}, 
+                       {postoffice_number: 7634764, circulation: 25, newspaper_index: 3746837, quantity: 200}, 
+                       {postoffice_number: 7634764, circulation: 27, newspaper_index: 23898237, quantity: 200}])
+
+</code></pre></div>
             </div>
         </div>
 
