@@ -176,7 +176,17 @@
 <p>Выбор газет и их редакторов с использованием функции смены регистра</p>
 <pre><code>db.newspaper.aggregate([{$project: {editor: {$toLower: &quot;$editor&quot;}}}])
 </code></pre>
-<p><img alt="" src="../../mongo_6.png" /></p></div>
+<p><img alt="" src="../../mongo_6.png" /></p>
+<h3 id="7">запрос 7</h3>
+<pre><code>db.printing.mapReduce
+(
+    function() { emit(this.typography, this.quantity); },
+    function(key, values) { return Array.sum( values ); },
+    { out: &quot;printing_totals&quot; } 
+)
+
+</code></pre>
+<p><img alt="" src="../../mongo_7.png" /></p></div>
             </div>
         </div>
 
